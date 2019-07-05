@@ -1,0 +1,498 @@
+<div class="container col-lg-12">
+  <div class="row">
+    <div class="col col-lg-2 card  left-menu">
+      <div class="container">
+        <div class="row">
+          <button class="buttonCat col col-lg-12 " type="button">
+            <img src="../../../assets/images/icons8-menu-50.png" height="25px" width="25px"> Filter
+          </button>
+
+        </div>
+        <div class="row">
+          <div class="container clist expand col col-lg-12">
+            <div *ngFor="let cat of category" class="row cats" id="bycategory">
+              <div class="row col col-lg-12">
+
+                <button (click)="setCategory(cat[0].name)" id="{{cat[0].name}}"
+                  onclick="setSelected(this.id,'buttonCat')" class="buttonCat col col-lg-7 ">{{cat[0].name}}
+                </button>
+                <button class="buttonCat  col col-lg-5 count">{{cat[0].count}}</button>
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="container">
+            <div class="row">
+              <button class="buttonCat col col-lg-12 " type="button" data-toggle="collapse" data-target="#filters"
+                aria-expanded="false">
+                <img src="../../../assets/images/icons8-menu-50.png" height="25px" width="25px">Other filters*
+              </button>
+            </div>
+            <div id="filters" class=" collapse row ">
+              <div [formGroup]="filters" class="container  ">
+                <div class="row">
+
+                  <input type="text" class="col col-lg-12" formControlName="fuel" type="text" list="fuel"
+                    placeholder="By fuel">
+                  <datalist id="fuel" aria-placeholder="By fuel">
+                    <option value="Gasoline">Gasoline</option>
+                    <option value="Diesel">Diesel</option>
+                  </datalist>
+                </div>
+                <div class="row">
+
+                  <input type="text" class="col col-lg-12" formControlName="available" type="text" list="available"
+                    placeholder="Available">
+                  <datalist id="available">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </datalist>
+                </div>
+                <div class="row">
+                  <button type="button" (click)="doFilter()" class="col refresh ">Refresh <img
+                      src="../../../assets/images/icons8-synchronize-filled-50.png" height="25px" width="25px"
+                      style="float:right"></button>
+                </div>
+                <div class="row error">{{message}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [formGroup]="cat" class="container">
+
+        <div class="row">
+          <div class="container vlist">
+            <div class="row">
+              <h4>All vehicles list</h4>
+            </div>
+            <div *ngFor="let catList of list">
+              <div class="row">
+
+                <button class="buttonList col col-lg-12" id="{{catList.regPlates}}"
+                  (click)="getVehicle($event)">{{catList.manufacturer+'  '+ catList.model}} </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-8 card slide">
+      <div class="container">
+        <div class="row">
+          <div id="vehicleSlide" class="col carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active ">
+                <img class="img-fluid d-block w-100 fit-image" src="{{list[index].image}}">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="main">{{list[index].manufacturer}} {{list[index].model}}</h5>
+                  <h4 class="main">{{list[index].type}}</h4>
+                </div>
+              </div>
+
+            </div>
+            <button class="carousel-control-prev" (click)="switchPrevious()" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" (click)="switchNext()" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="row vmenu">
+          <button onclick="resolveCollapse('info') ; setSelected(this.id,'buttonInfo');" id="inf"
+            class="buttonInfo col col-lg-3" data-toggle="collapse" data-target="#info"
+            aria-expanded="false">Info</button>
+          <button onclick="resolveCollapse('legal') ; setSelected(this.id,'buttonInfo');" id="lgl"
+            class="buttonInfo col col-lg-3" data-toggle="collapse" data-target="#legal"
+            aria-expanded="false">Legal</button>
+          <button onclick="resolveCollapse('issues'); setSelected(this.id,'buttonInfo');" id="iss"
+            class="buttonInfo col col-lg-3" data-toggle="collapse" data-target="#issues" aria-expanded="false">Issues
+            <img class="notification" *ngIf="issues" src="../../../assets/images/red.png" height="20px"
+              width="20px"></button>
+          <button onclick="resolveCollapse('actions') ; setSelected(this.id,'buttonInfo');" id="act"
+            class="buttonInfo col col-lg-3" data-toggle="collapse" data-target="#actions"
+            aria-expanded="false">Reports</button>
+
+        </div>
+
+      </div>
+    </div>
+    <div  class="col col-lg-2 card right-menu">
+      <div class="container">
+          <div *ngIf="role=='Worker'" class="row ">
+              <button onclick="resolveCollapse('take')" data-toggle="collapse" data-target="#take"
+                aria-expanded="false" class="buttonMenu col col-lg-12"><img
+                  src="../../../assets/images/icons8-add-filled-50.png" height="25px" width="25px">Reserve vehicle</button>
+            </div>
+            <div class="collapse" id="take">
+            <div class="row">
+              <div class="col col-lg-10"><input type="text" placeholder="How many days"></div>
+            </div>
+            <div class="row">
+                <div class="col"><button class="buttonMenu" type="button" (click)="reserveVehicle()">Reserve</button></div>
+              </div>
+          </div>
+        <div *ngIf="role=='Manager'" class="row ">
+          <button onclick="resolveCollapse('newvehicle')" data-toggle="collapse" data-target="#newvehicle"
+            aria-expanded="false" class="buttonMenu col col-lg-12"><img
+              src="../../../assets/images/icons8-add-filled-50.png" height="25px" width="25px">Add</button>
+        </div>
+        <div  *ngIf="role=='Manager'" class="row ">
+          <button class="buttonMenu col col-lg-12" data-toggle="collapse" data-target="#editvehicle"
+            aria-expanded="false" (click)="fillFormData()" onclick="resolveCollapse('editvehicle')"><img src="../../../assets/images/icons8-compose-filled-50.png" height="25px"
+              width="25px">Edit</button>
+        </div>
+        <div   *ngIf="role=='Manager'" class="row ">
+          <button class="buttonMenu col col-lg-12" data-toggle="collapse" data-target="#confirm" aria-expanded="false"><img src="../../../assets/images/icons8-cancel-filled-50.png"
+              height="25px" width="25px">Delete</button>
+        </div>
+        <div  *ngIf="role=='Manager'" class=" collapse row" id="confirm">
+          <div class="col error">Delete current?<button class="col buttonMenu"  type="button">OK</button></div>
+        </div>
+       
+        <div  *ngIf="role=='Manager'" class="row ">
+          <button class="buttonMenu col col-lg-12" data-toggle="collapse" data-target="#newCat" aria-expanded="false"><img src="../../../assets/images/icons8-add-filled-50.png"
+              height="25px" width="25px">Category</button>
+        </div>
+        <div class=" collapse row" id="newCat">
+          <form>
+          <input type="text" class="col form-control" placeholder="New category">
+          <button type="button" class="buttonMenu">Save</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="container colaps col-lg-10 offset-1">
+  <div class="row collapse" id="info">
+    <div class="container information info card card-default">
+      <div class="row"><a href="#info">
+          <h4>Info</h4>
+        </a></div>
+      <div class="row">
+        <div class="col col-lg-2">Manufacturer:</div>
+        <div class="col col-lg-2">{{list[index].manufacturer}}</div>
+        <div class="col col-lg-2">Model:</div>
+        <div class="col col-lg-2">{{list[index].model}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-2">Type:</div>
+        <div class="col col-lg-2">{{list[index].type}}</div>
+        <div class="col col-lg-2">Color:</div>
+        <div class="col col-lg-2">{{list[index].color}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-2">Doors:</div>
+        <div class="col col-lg-2">{{list[index].doors}}</div>
+        <div class="col col-lg-2">Seats:</div>
+        <div class="col col-lg-2">{{list[index].seats}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-2">Produced:</div>
+        <div class="col col-lg-2">{{list[index].produced}}</div>
+        <div class="col col-lg-2">Km:</div>
+        <div class="col col-lg-2">{{list[index].km}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-2">Workhours:</div>
+        <div class="col col-lg-2">{{list[index].workhours}}</div>
+        <div class="col col-lg-2">Available:</div>
+        <div class="col col-lg-2">{{list[index].available?'Yes':'No'}}</div>
+      </div>
+      <div class="row">
+        <h4>Motor</h4>
+      </div>
+
+      <div class="row">
+        <div class="col col-lg-2">Fuel:</div>
+        <div class="col col-lg-2">{{list[index].motor.fuel}}</div>
+        <div class="col col-lg-2">Type:</div>
+        <div class="col col-lg-2">{{list[index].motor.type}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-2">Volume:</div>
+        <div class="col col-lg-2">{{list[index].motor.volume}}cm3</div>
+        <div class="col col-lg-2">HP:</div>
+        <div class="col col-lg-2">{{list[index].motor.hp}}</div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row collapse" id="legal">
+    <div class="container information info">
+      <div class="row"><a href="#legal">
+          <h4>Legal</h4>
+        </a></div>
+      <div class="row">
+        <div class="col col-lg-3">Plates number:</div>
+        <div class="col col-lg-3">{{list[index].regPlates}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-3">Next registration:</div>
+        <div class="col col-lg-3">{{list[index].legal.registrationExp}}</div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col col-lg-3">Next insurance:</div>
+        <div class="col col-lg-3">{{list[index].legal.insuranceExp}}</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row collapse" id="issues">
+    <div class="container information info">
+      <div class="row"><a href="#issues">
+          <h4>Issues</h4>
+        </a></div>
+        <div *ngFor="let reg of registrationList">
+        <div class="row card issue" *ngIf="reg.regPlates==list[index].regPlates">
+          <div class="block"><h5>Registration</h5></div>
+          <div class="block">{{reg.manufacturer+'  '+reg.model}}</div>
+          <div class="block">Registration expires :{{reg.legal.registrationExp}} </div>
+          <hr>
+        </div>
+      </div>
+   
+      <div *ngFor="let reg of insuranceList">
+          <div class="row card issue" *ngIf="reg.regPlates==list[index].regPlates">
+              <div class="block"><h5>Insurance</h5></div>
+            <div class="block">{{reg.manufacturer+'  '+reg.model}}</div>
+            <div class="block">Insurance expires :{{reg.legal.insuranceExp}} </div>
+            <hr>
+          </div>
+        </div>
+      
+        <div *ngFor="let reg of serviceList">
+            <div class="row card issue" *ngIf="reg.regPlates==list[index].regPlates">
+                <div class="block"><h5>Full service</h5></div>
+              <div class="block">{{reg.manufacturer+'  '+reg.model}}</div>
+              <div class="block">Current kilometers :{{reg.km}}</div>
+              <div class="block">Full service at :{{reg.services.nextFullService}} </div>
+              <hr>
+            </div>
+          </div>
+      
+          <div *ngFor="let reg of oafList">
+              <div class="row card issue" *ngIf="reg.regPlates==list[index].regPlates">
+                  <div class="block"><h5>Oil and filters change</h5></div>
+                <div class="block">{{reg.manufacturer+'  '+reg.model}}</div>
+                <div class="block">Current kilometers :{{reg.km}}</div>
+                <div class="block">OAF service at :{{reg.services.nextOilAndFiltersChange}} </div>
+                <hr>
+              </div>
+            </div>
+           
+            <div *ngFor="let reg of cleaningList">
+                <div class="row card issue" *ngIf="reg.regPlates==list[index].regPlates">
+                    <div class="block"><h5>Cleaning</h5></div>
+                  <div class="block">{{reg.manufacturer+'  '+reg.model}}</div>
+                  <div class="block">Next cleaning :{{reg.services.nextCleaning}} </div>
+                  <hr>
+                </div>
+              </div>
+          
+    </div>
+  </div>
+  <div class="row collapse" id="actions">
+    <div class="container information info">
+      <div class="row"><a href="#actions">
+          <h4>Reports</h4>
+        </a></div>
+        <div *ngFor="let reg of reportsList">
+            <div class="row card issue" *ngIf="reg.regPlates==list[index].regPlates">
+                
+              <div class="block">Problem: {{'  '+reg.areaOfProblem}}</div>
+              <div class="block">Description:{{'  '+reg.problemDescription}} </div>
+              <div class="block">Solved: {{'  '+ reg.solved? 'No':'Yes'}}</div>
+              <hr>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<form class="col-lg-12 new" [formGroup]="newVehicle" (submit)="save()">
+  <div class="container col-lg-12  collapse" id="newvehicle">
+    <div class="row"><a href="#newvehicle">
+        <h4>Add new vehicle</h4>
+      </a></div>
+    <div class="row">
+      <h4>Info</h4>
+    </div>
+    <div class="row form-group"><label class="col col-lg-3">Reg plates <b class="imp"
+          *ngIf="newVehicle.get('regPlates').hasError('required')  "> required*</b></label>
+      <input formControlName="regPlates" class="col col-lg-3 form-control" type="text">
+      <label class="col col-lg-3">Manufacturer<b class="imp" *ngIf="newVehicle.get('manufacturer').hasError('required')  ">
+          required*</b></label>
+      <input formControlName="manufacturer" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Type <b class="imp"
+          *ngIf="newVehicle.get('type').hasError('required')  "> required*</b></label>
+      <input formControlName="type" list="catList" class="col col-lg-3 form-control" type="text">
+      <datalist id="catList">
+        <div *ngFor="let cats of category">
+          <option value="{{cats[0].name}}">{{cats[0].name}}</option>
+        </div>
+      </datalist>
+      <label class="col col-lg-3">Model <b class="imp" *ngIf="newVehicle.get('regPlates').hasError('required')  ">
+          required*</b></label>
+      <input formControlName="model" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Color <b class="imp"
+          *ngIf="newVehicle.get('color').hasError('required')  "> required*</b></label>
+      <input formControlName="color" class="col col-lg-3 form-control" type="text">
+      <label class="col col-lg-3 ">Produced[yyyy] <b class="imp"
+          *ngIf="newVehicle.get('produced').hasError('required')   "> required*</b></label>
+      <input formControlName="produced" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Seats</label>
+      <input formControlName="seats" class="col col-lg-3 form-control" type="text">
+      <label class="col col-lg-3 ">Doors</label>
+      <input formControlName="doors" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Workhours</label>
+      <input formControlName="workhours" class="col col-lg-3 form-control" type="number">
+      <label class="col col-lg-3 ">Kilometers</label>
+      <input formControlName="km" class="col col-lg-3 form-control" type="number"></div>
+    <div class="row form-group"><label class="col col-lg-3">Load[tons]</label>
+      <input formControlName="load" class="col col-lg-3 form-control" type="number">
+    </div>
+    <div class="row">
+      <h4>Motor</h4>
+    </div>
+
+    <div class="row form-group"><label class="col col-lg-3">Fuel <b class="imp"
+          *ngIf="newVehicle.get('fuel').hasError('required')  ">
+          required*</b></label>
+      <input formControlName="fuel" class="col col-lg-3 form-control" list="fuelList" type="text">
+      <datalist id="fuelList">
+        <option value="Gasoline">Gasoline</option>
+        <option value="Diesel">Diesel</option>
+      </datalist>
+      <label class="col col-lg-3 ">Model</label>
+      <input formControlName="modelm" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Volume[cm3]</label>
+      <input formControlName="volume" class="col col-lg-3 form-control" type="number">
+      <label class="col col-lg-3 ">Hp</label>
+      <input formControlName="hp" class="col col-lg-3 form-control" type="number"></div>
+    <div class="row">
+      <h4>Legal</h4>
+    </div>
+    <div class="row form-group"><label class="col col-lg-3">Next registration <b class="imp"
+          *ngIf="newVehicle.get('registrationExp').hasError('required')  "> required*</b></label>
+      <input formControlName="registrationExp" class="col col-lg-3 form-control" type="date">
+      <label class="col col-lg-3 ">Next insurance <b class="imp"
+          *ngIf="newVehicle.get('insuranceExp').hasError('required')  "> required*</b></label>
+      <input formControlName="insuranceExp" class="col col-lg-3 form-control" type="date"></div>
+    <div class="row">
+      <h4>Services</h4>
+    </div>
+    <div class="row form-group"><label class="col col-lg-3">Full service at[km] <b class="imp"
+          *ngIf="newVehicle.get('nextFullService').hasError('required')  "> required*</b></label>
+      <input formControlName="nextFullService" class="col col-lg-3 form-control" type="number">
+      <label class="col col-lg-3 ">Next oaf change[km] <b class="imp"
+          *ngIf="newVehicle.get('nextOilAndFiltersChange').hasError('required')  "> required*</b></label>
+      <input formControlName="nextOilAndFiltersChange" class="col col-lg-3 form-control" type="number"></div>
+    <div class="row form-group"><label class="col col-lg-3">Next cleaning <b class="imp"
+          *ngIf="newVehicle.get('nextCleaning').hasError('required')  "> required*</b></label>
+      <input formControlName="nextCleaning" class="col col-lg-3 form-control" type="date">
+    </div>
+    <div class="row"> <button class="button" class="col col-lg-3" type="submit">Save</button></div>
+  </div>
+</form>
+<form class="col-lg-12 new" [formGroup]="editVehicle" (submit)="update()">
+  <div class="container col-lg-12  collapse" id="editvehicle">
+    <div class="row"><a href="#editvehicle">
+        <h4>Edit vehicle data</h4>
+      </a></div>
+    <div class="row">
+      <h4>Info</h4>
+    </div>
+    <div class="row form-group"><label class="col col-lg-3">Reg plates <b
+          *ngIf="editVehicle.get('regPlates').hasError('required')  "> required*</b></label>
+      <input formControlName="regPlates" class="col col-lg-3 form-control" type="text">
+      <label class="col col-lg-3">Manufacturer<b *ngIf="editVehicle.get('manufacturer').hasError('required')  ">
+          required*</b></label>
+      <input formControlName="manufacturer" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Type <b class="imp"
+          *ngIf="editVehicle.get('type').hasError('required')  "> required*</b></label>
+      <input formControlName="type" list="catList" class="col col-lg-3 form-control" type="text">
+      <datalist id="catList">
+        <div *ngFor="let cats of category">
+          <option value="{{cats[0].name}}">{{cats[0].name}}</option>
+        </div>
+      </datalist>
+      <label class="col col-lg-3">Model <b class="imp" *ngIf="editVehicle.get('regPlates').hasError('required')  ">
+          required*</b></label>
+      <input formControlName="model" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Color <b class="imp"
+          *ngIf="editVehicle.get('color').hasError('required')  "> required*</b></label>
+      <input formControlName="color" class="col col-lg-3 form-control" type="text">
+      <label class="col col-lg-3 ">Produced[yyyy] <b class="imp"
+          *ngIf="editVehicle.get('produced').hasError('required')   "> required*</b></label>
+      <input formControlName="produced" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Seats</label>
+      <input formControlName="seats" class="col col-lg-3 form-control" type="text">
+      <label class="col col-lg-3 ">Doors</label>
+      <input formControlName="doors" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Workhours</label>
+      <input formControlName="workhours" class="col col-lg-3 form-control" type="number">
+      <label class="col col-lg-3 ">Kilometers</label>
+      <input formControlName="km" class="col col-lg-3 form-control" type="number"></div>
+    <div class="row form-group"><label class="col col-lg-3">Load[tons]</label>
+      <input formControlName="load" class="col col-lg-3 form-control" type="number">
+    </div>
+    <div class="row">
+      <h4>Motor</h4>
+    </div>
+
+    <div class="row form-group"><label class="col col-lg-3">Fuel <b class="imp"
+          *ngIf="editVehicle.get('fuel').hasError('required')  ">
+          required*</b></label>
+      <input formControlName="fuel" class="col col-lg-3 form-control" list="fuelList" type="text">
+      <datalist id="fuelList">
+        <option value="Gasoline">Gasoline</option>
+        <option value="Diesel">Diesel</option>
+      </datalist>
+      <label class="col col-lg-3 ">Model</label>
+      <input formControlName="modelm" class="col col-lg-3 form-control" type="text"></div>
+    <div class="row form-group"><label class="col col-lg-3">Volume[cm3]</label>
+      <input formControlName="volume" class="col col-lg-3 form-control" type="number">
+      <label class="col col-lg-3 ">Hp</label>
+      <input formControlName="hp" class="col col-lg-3 form-control" type="number"></div>
+    <div class="row">
+      <h4>Legal</h4>
+    </div>
+    <div class="row form-group"><label class="col col-lg-3">Next registration <b class="imp"
+          *ngIf="editVehicle.get('registrationExp').hasError('required')  "> required*</b></label>
+      <input formControlName="registrationExp" class="col col-lg-3 form-control" type="date">
+      <label class="col col-lg-3 ">Next insurance <b class="imp"
+          *ngIf="editVehicle.get('insuranceExp').hasError('required')  "> required*</b></label>
+      <input formControlName="insuranceExp" class="col col-lg-3 form-control" type="date"></div>
+    <div class="row">
+      <h4>Services</h4>
+    </div>
+    <div class="row form-group"><label class="col col-lg-3">Full service at[km] <b class="imp"
+          *ngIf="editVehicle.get('nextFullService').hasError('required')  "> required*</b></label>
+      <input formControlName="nextFullService" class="col col-lg-3 form-control" type="number">
+      <label class="col col-lg-3 ">Next oaf change[km] <b class="imp"
+          *ngIf="editVehicle.get('nextOilAndFiltersChange').hasError('required')  "> required*</b></label>
+      <input formControlName="nextOilAndFiltersChange" class="col col-lg-3 form-control" type="number"></div>
+    <div class="row form-group"><label class="col col-lg-3">Next cleaning <b class="imp"
+          *ngIf="editVehicle.get('nextCleaning').hasError('required')  "> required*</b></label>
+      <input formControlName="nextCleaning" class="col col-lg-3 form-control" type="date">
+    </div>
+    <div class="row"> <button class="button" class="col col-lg-3" type="submit">Update</button></div>
+  </div>
+</form>

@@ -1,0 +1,192 @@
+<div class="container box">
+  <div class="row ">
+    <div class="col col-md-4 offset-4 title">
+      <img src="../../../assets/images/icons8-carpark-filled-50.png" height="80" width="80">
+    </div>
+  </div>
+  <div class="row card">
+    <div class="col col-md-4 offset-4 title">
+      <h2>CPManager</h2>
+    </div>
+
+
+    <div class="row card login">
+      <form class="form" [formGroup]="loginGroup" (submit)="login()">
+        <div class="container">
+          <mat-card class="login-theme">
+            <div class="row form-group">
+              <div class="col col-md-4 offset-4  title">
+
+                <mat-card-title color="primary">
+                  Login                </mat-card-title>
+              </div>
+            </div>
+            <div class="row form-group">
+
+              <mat-form-field color="primary" class="col col-lg-6 offset-3 mat-input ">
+                <input matInput formControlName="email" placeholder="Your email" type="email">
+                <mat-hint>example@provider.com</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="row form-group">
+
+              <mat-form-field color="primary" class="col col-lg-6 offset-3">
+                <input matInput formControlName="password" placeholder="Your password" type="email">
+              </mat-form-field>
+            </div>
+
+            <div class="row form-group col-lg-12 ">
+              <div class="col col-lg-3"></div>
+              <button mat-raised-button color="warn" type="submit" class="col col-lg-2 ">Login</button>
+              <div class="col col-lg-2"></div>
+              <button mat-raised-button color="warn" type="button" data-toggle="collapse" data-target="#register"
+                aria-expanded="false" onclick="resolveCollapse('register')" class="col col-lg-2 ">Register</button>
+            </div>
+            <div class="row">
+              <mat-error class="col col-lg-4 offset-4">{{message}}</mat-error>
+            </div>
+          </mat-card>
+        </div>
+      </form>
+    </div>
+    <div class="row register">
+      <div class="container card  collapse" id="register">
+        <form [formGroup]="regGroup" (submit)="tryToAddUser()">
+          <mat-card class="login-theme">
+            <mat-card-title>
+              <div class="form-group row"><a class="col" href="#register">Fill form to register</a></div>
+            </mat-card-title>
+            <mat-card-content>
+              <div class="form-group row">
+
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="email" placeholder="Your email" id="regEmail" type="email">
+                  <mat-hint>example@provider.com</mat-hint>
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="password" placeholder="Your password" id="regEmail" type="password">
+                  <mat-hint>At least 6 spaces long</mat-hint>
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="passretype" placeholder="Retype password" type="password">
+                  <mat-hint>Match entered password</mat-hint>
+                </mat-form-field>
+              </div>
+
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="username" placeholder="Your username" type="text">
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="firstName" placeholder="Your first name" type="text">
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="lastName" placeholder="Your last name" type="text">
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="town" placeholder="Your town" type="text">
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="street" placeholder="Your street" type="text">
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="streetNumber" placeholder="Your street number" type="number">
+                </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <mat-form-field color="primary" class="col col-lg-6 offset-3 offset-3 ">
+                  <input matInput formControlName="phoneNumber" placeholder="Your phone number" type="tel">
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+            <div class="row form-group offset-8 ">
+              <mat-card-actions>
+                <button mat-raised-button color="primary" class="col col-lg-3" type="submit">Register</button>
+              </mat-card-actions>
+            </div>
+
+          </mat-card>
+        </form>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="container footer col col-md-12 ">
+    <div class="row ">
+      <button class="footerOption col col-md-2" onclick="resolveCollapse('abt')" type="button" data-toggle="collapse"
+        data-target="#about" aria-expanded="false">
+        About
+      </button>
+      <button class="footerOption col col-md-2" onclick="resolveCollapse('dev')" type="button" data-toggle="collapse"
+        data-target="#developer" aria-expanded="false">
+        Developer
+      </button>
+      <button class="footerOption col col-md-2" onclick="resolveCollapse('soc')" type="button" data-toggle="collapse"
+        data-target="#social" aria-expanded="false">
+        Social
+      </button>
+
+
+      <div class="collapse row" id="about">
+        <div class="card card-body">
+          <a id="abt" href="#abt">About app</a>
+          CPManager is single page application developed using Angular 7 framework,HTML5,CSS and Bootstrap for testing
+          purposes.
+          App is imagined as full solution for vehicle park organization and maintenance as it offer you interaction
+          with
+          workers.
+          This app is designed to help managers to organize vehicle park and to be informed with lastest reports.It
+          provides all major events and possible problems to keep eye on.
+          Design concept has two major directions.First is to provide managers with data they neeed and second to help
+          other workers involved to stay informed and submit their work.
+          Because of this app will show options based on roles and their requirements.But in the end it is all conected
+          into one single page appplication.
+          Application is developed to use data from .json static files so it is not possible to make any changes to it
+          or to add new data.
+
+        </div>
+      </div>
+      <div class="collapse row" id="developer">
+        <div class="card card-body">
+          <p>
+            <a id="dev" href="#dev">Login</a>
+
+            Please use this information to log in to appplication
+
+            Email:<b>jon@men.com</b>
+
+            Password:<b>jonthemen</b>
+
+            ...for manager position and ...
+            Email:<b>jon@mech.com</b>
+            Password:<b>jonthemech</b>
+            ...for worker position</p>
+        </div>
+      </div>
+      <div class="collapse row" id="social">
+        <div class="card card-body">
+          <a id="soc" href="#soc">Social</a>
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+    </div>
+  </div>

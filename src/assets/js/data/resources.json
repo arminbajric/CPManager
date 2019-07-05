@@ -1,0 +1,22 @@
+{
+    "list":[{
+        "id":"0",
+        "type":"Diesel",
+        "quantity":2045
+    },
+    {
+        "id":"1",
+        "type":"Gasoline",
+        "quantity":980
+    },
+    {
+        "id":"2",
+        "type":"Hydrol",
+        "quantity":340
+    },
+    {
+        "id":"3",
+        "type":"Cooling liquid",
+        "quantity":90
+    }]
+}

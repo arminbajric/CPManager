@@ -1,27 +1,10 @@
-# VehicleManager
+# CPMManager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
+Web app developed for testing purposes for internship program.
+App is designed as full control manager for car park with full overview into vehicles information,vehicle maintenance ,services ,legal information,resources and other important parts.
 
-## Development server
+# Stack 
+Stack is based on Angular 7 framework,Bootstrap 4,HTML5 ,CSS and Javascript.App uses data provided and stored in .json files but in next phase is planned to develop webservice based on Spring framework ,Hibernate and PostgreSQL as database.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Development version
+Development version can be found on this link (just frontend)  http://cpmanager-5d52a.firebaseapp.com/app

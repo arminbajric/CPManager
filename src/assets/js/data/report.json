@@ -1,0 +1,45 @@
+{
+    "report":[{
+        "regPlates":"000-0-003",
+        "manufacturer":"Audi",
+        "model":"A6",
+        "solved":true,
+        "areaOfProblem":"Engine",
+        "problemDescription":"Strange noise and motor behaviour",
+        "solvedBy":"Jon Mech"
+    },{
+        "regPlates":"000-0-002",
+        "solved":false,
+        "manufacturer":"Audi",
+        "model":"A6",
+        "areaOfProblem":"Tyres",
+        "problemDescription":"One tyre is flat",
+        "solvedBy":""
+    },{
+        "regPlates":"000-0-004",
+        "solved":false,
+        "manufacturer":"Ford",
+        "model":"Transit",
+        "areaOfProblem":"Steering",
+        "problemDescription":"Steering is not comfortable",
+        "solvedBy":""
+    },{
+        "regPlates":"000-0-001",
+        "solved":false,
+        "manufacturer":"Audi",
+        "model":"A4",
+        "areaOfProblem":"Engine",
+        "problemDescription":"Engine can't start",
+        "solvedBy":""
+    },{
+        "regPlates":"000-0-008",
+        "solved":false,
+        "manufacturer":"VW",
+        "model":"Caddy",
+        "areaOfProblem":"Ride",
+        "problemDescription":"Some noise coming from front left wheel",
+        "solvedBy":""
+    }
+    
+    ]
+}

@@ -1,0 +1,100 @@
+.box{
+    margin-top:3% !important;
+  
+}
+.title{
+    text-align: center;
+}
+.card{
+    background-color: transparent;
+    color:white;
+   
+}
+h2{
+  color:#1A82C8;
+}
+h4{
+    color:#1A82C8;
+}
+.login{
+    margin-top:3% !important ;
+}
+.button{
+    outline: none;
+    border:0px;
+    background-color: #212121;
+    color:#929292; 
+}
+.buttonLogin{
+    outline: none;
+    border:0px;
+    background-color: #212121;
+    color:#929292;
+}
+.buttonRegister{
+    margin-left: 5px;
+    outline: none;
+    border:0px;
+    background-color: #212121;
+    color:#929292;
+}
+.buttonLogin:hover{
+    background-color: #424242;
+}
+.buttonRegister:hover{
+    background-color: #424242;
+}
+.footer{
+   background-color: #212121;
+   position: fixed;
+   bottom: 0px;
+   left:0px;
+   float: left;
+ }
+ .footerOption{
+    color:#929292;
+    outline: none;
+    border:0px;
+   background-color: transparent;
+ }
+ .footerOption:hover{
+     background-color: #626262;
+ }
+.info{
+   float: right;
+}
+a:hover{
+   text-decoration: none;
+}
+#about{
+   margin-top:10px;
+}
+#social{
+   margin-top:10px;
+   
+}
+#developer{
+   margin-top:10px;
+}
+.card-body {
+    margin-left: 3%;
+    margin-right: 3%;
+    border:0px;
+    outline: none;
+}
+.card{
+    border:0px;
+    outline: none;
+}
+.register{
+    margin-left: 0px !important ;
+    margin-right: 0px !important;
+}
+.mat-card{
+    background-color: transparent;
+    color: #929292 ;
+}
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }

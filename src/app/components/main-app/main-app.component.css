@@ -1,0 +1,43 @@
+.navigation{
+    
+    background-color: #212121;
+}
+.button{
+    background-color: transparent;
+    outline: none;
+    border:0px;
+    color:#929292;
+}
+.button:hover{
+    background-color: #424242;
+}
+.icon{
+    float: left;
+}
+.arrow{
+ float: right;   
+}
+.show{
+  visibility: visible;
+}
+.hide{
+    visibility :hidden;
+}
+.active{
+    background-color: #303030;
+}
+.footer{
+    position: fixed;
+    bottom:0px;
+}
+.footerMenu{
+    background-color: transparent;
+}
+.title{
+    text-align: center;
+    background-color: black;
+    color:white;
+}
+.right{
+    float:right;
+}

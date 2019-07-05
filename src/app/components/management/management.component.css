@@ -1,0 +1,50 @@
+h4{
+    color:#1F7FBF;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+.content{
+    min-height: 50vh;
+    max-height: 50vh !important;
+    background-color: transparent;
+    overflow-y: auto;
+    color:#929292;
+  
+}
+.button{
+    background-color: transparent;
+    border:none;
+    text-align: left !important;
+    color:#929292;
+}
+.card{
+background-color: transparent;
+
+padding-left: 10px;
+}
+.content .row{
+    padding-left: 15px !important;
+}
+.meetings{
+    color:#929292;
+   min-height: 50vh;
+   max-height: 50vh !important;
+   padding-left: 15px;
+}
+.button:hover{
+    background-color: #212121;
+}
+#newmeeting{
+    color:#929292;
+    padding-left: 15px;
+}
+hr{
+    background-color: black;
+}
+.resources{
+    padding-left: 15px !important;    
+    color:#929292;
+}

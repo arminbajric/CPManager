@@ -1,0 +1,182 @@
+.left-menu{
+    background-color:transparent;
+    height: auto;
+    margin-top:20px;
+}
+.right-menu{
+    background-color: transparent;
+    height: auto;
+    margin-top:20px;
+}
+.card{
+    background-color: transparent;
+    border:0px;
+    outline:none;
+}
+.slide{
+    margin-top: 20px;
+    height: 70vh !important;
+}
+.fit-image{
+    width: 100%;
+object-fit: cover;
+height: 70vh;
+}
+.carousel-control-prev{
+    background-color: transparent;
+    outline: none;
+    border:0px;
+}
+.carousel-control-next{
+    background-color: transparent;
+    outline: none;
+    border:0px;
+}
+.carousel-control-prev-icon{
+    background-color: #111111;
+}
+.carousel-control-next-icon{
+    background-color: #111111;
+}
+.buttonList{
+    background-color: transparent;
+    color:#929292;
+    outline: none;
+    border:0px;
+    text-align: left;
+    margin-top:5px;
+}
+.buttonCat{
+    background-color: transparent;
+    color:#929292;
+    outline: none;
+    border:0px;
+    text-align: left;
+    margin-top:5px;
+}
+.count{
+    background-color: #424242;
+    color:#929292;
+    vertical-align: -webkit-baseline-middle;
+}
+hr{
+    background-color: #929292;
+    border-color: #929292;
+}
+.button:hover{
+    background-color: #424242;
+}
+.catlist{
+    margin-top: 20px;
+}
+.notification{
+    float: right;
+    margin-right: 10px;
+}
+.info{
+    background-color:transparent;
+    color:#727272;
+    margin-bottom: 30px;
+}
+.vlist{
+    margin-top: 20px;
+    color:#929292;
+    max-height: 40vh;
+    overflow-y: auto;
+
+}
+.clist{
+    margin-top: 20px;
+    color:#929292;
+    max-height: 20vh;
+    overflow-y: auto;
+
+}
+a h4{
+    color: #929292;
+}
+.vmenu{
+   
+    margin-bottom: 20px;
+}
+.cats{
+    max-height: 50vh;
+    overflow-y: auto;
+}
+.active{
+    background-color: #424242;
+}
+.buttonInfo{
+    background-color: transparent;
+    color:#929292;
+    outline: none;
+    border:0px;
+    text-align: left;
+    margin-top:5px;
+}
+.buttonMenu{
+    background-color: transparent;
+    color:#929292;
+    outline: none;
+    border:0px;
+    text-align: left;
+    margin-top:5px;
+}
+.refresh{
+    background-color: transparent;
+    color:#929292;
+    outline: none;
+    border:0px;
+    text-align: left;
+    margin-top:5px;
+}
+.refresh:hover{
+    background-color: #212121;
+}
+.error{
+    color:#929292;
+}
+.new{
+    color:#929292;
+    margin-top:30px;
+    position: absolute;
+}
+.button{
+    background-color: transparent;
+    color:#929292;
+    outline: none;
+    border:0px;
+    text-align: center;
+    margin-top:5px;
+}
+.imp{
+    font-size: smaller;
+    color:#333399;
+}
+.card{
+    background-color: transparent;
+}
+.buttonMenu:hover{
+    background-color: #212121;
+}
+.information{
+    border:1px solid black;
+    border-radius: 3px;
+    margin-top :30px;
+    padding-left: 20px;
+}
+.colaps{
+    margin-top: 30px;
+}
+h5{
+    color:#1F7FBF;
+}
+h4{
+    color: #1C6CA2;
+}
+a h4{
+    color: #1C6CA2;
+}
+.main{
+    color:#929292;
+}

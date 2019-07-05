@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu'); 
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css'; 
+@import "theme.scss";
+
+body{
+   
+    margin-bottom: 40px;
+    font-family: 'Ubuntu',sans-serif;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    background: #424242; 
+  }
+   
+  
+  ::-webkit-scrollbar-thumb {
+    background: #212121; 
+    border-radius: 3px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #111111; 
+  }

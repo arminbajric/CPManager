@@ -1,0 +1,76 @@
+<div class="container col col-lg-12 navigation">
+  <div class="row">
+    <div class="col col-lg-1 title">CPM</div>
+    <button *ngIf="role =='Manager'" id="home" (click)="openHome()" onclick="setActive(this.id,'iconH')" class="button col col-lg-2  active"><img
+        class="icon" src="../../../assets/images/icons8-home-page-filled-50.png" height="25px"
+        width="25px"><span>Home</span><img id="iconH" class="arrow show"
+        src="../../../assets/images/icons8-expand-arrow-50.png" height="20px" width="2px"></button>
+    <button   id="garage" (click)="openGarage()" onclick="setActive(this.id,'iconG')" class="button col col-lg-2 "><img
+        class="icon" src="../../../assets/images/icons8-garage-door-filled-50.png" height="25px"
+        width="25px"><span>Garage</span><img id="iconG" class="arrow hide"
+        src="../../../assets/images/icons8-expand-arrow-50.png" height="20px" width="20px"></button>
+    <button  *ngIf="role =='Manager'" id="management" (click)="openManagement()" onclick="setActive(this.id,'iconM')"
+      class="button col col-lg-2 "><img class="icon" src="../../../assets/images/icons8-people-32.png" height="25px"
+        width="25px"><span>Management</span><img id="iconM" class="arrow hide"
+        src="../../../assets/images/icons8-expand-arrow-50.png" height="20px" width="20px"></button>
+        <button  *ngIf="role =='Worker'" id="management" (click)="openWorkplace()" onclick="setActive(this.id,'iconM')"
+        class="button col col-lg-2 active "><img class="icon" src="../../../assets/images/icons8-people-32.png" height="25px"
+          width="25px"><span>Workplace</span><img id="iconM" class="arrow hide"
+          src="../../../assets/images/icons8-expand-arrow-50.png" height="20px" width="20px"></button>
+    <button id="user" (click)="openUserProfile()" onclick="setActive(this.id,'iconU')" class="button right  col col-lg-2"><img
+        class="icon" src="../../../assets/images/icons8-administrator-male-26.png" height="25px"
+        width="25px"><span>{{username}}</span></button>
+        <button id="logOut" (click)="logOut()" class="button right col col-lg-1"><img
+          class="icon float-right" src="../../../assets/images/icons8-log-out-50.png" height="20px"
+          width="20px"></button>
+  </div>
+
+</div>
+<div #block>
+
+</div>
+<div class="container footer col col-lg-12">
+  <div class="row ">
+    <button class="button col col-md-2 offset-1" onclick="resolveCollapse('hlp')" type="button" data-toggle="collapse"
+      data-target="#help" aria-expanded="false">
+      Help
+    </button>
+    <button class="button col col-md-2" onclick="resolveCollapse('abt')" type="button" data-toggle="collapse"
+      data-target="#about" aria-expanded="false">
+      About
+    </button>
+    <button class="button col col-md-2" onclick="resolveCollapse('rep')" type="button" data-toggle="collapse"
+      data-target="#report" aria-expanded="false">
+      Report
+    </button>
+  </div>
+  <div class="collapse row" id="help">
+    <div class="card card-body">
+      <a id="hlp" href="#hlp">About</a>
+      This app is designed to help managers to organize vehicle park of organization and to be informed with lastest reports.It provides all major events and possible problems to keep eye on.
+      Design concept has two major directions.First is to provide managers with data they neeed and second to help other workers involved to stay informed and submit their work.
+      Because of this app will show options based on roles and their requirements.But in the end it is all conected into one single page appplication.
+      Application is developed to use data from .json static files so it is not possible to make any changes to it or to add new data.
+
+    </div>
+  </div>
+  <div class="collapse row" id="about">
+    <div class="card card-body">
+      <a id="abt" href="#abt">About login</a>
+      Please use this information to log in to appplication
+      Email:jon@men.com
+      Password:jonthemen
+      ...for manager position and ...
+      Email:jon@mech.com
+      Password:jonthemech
+      ...for worker position
+    </div>
+  </div>
+  <div class="collapse row" id="report">
+    <div class="card card-body">
+      <a id="rep" href="#rep">Report</a>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+      keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+  </div>
+</div>

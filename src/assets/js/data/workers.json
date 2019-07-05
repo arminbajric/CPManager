@@ -1,0 +1,31 @@
+{
+    "list": [
+        {
+            "id": "101",
+            "fullName": "Jon Men",
+            "email": "jon@men.com",
+            "password": "jonthemen",
+            "adress": "Street 1",
+            "number": "1",
+            "role": "Manager"
+        },
+        {
+            "id": "102",
+            "fullName": "Jon Mech",
+            "email": "jon@mech.com",
+            "password": "jonthemech",
+            "adress": "Street 2",
+            "number": "2",
+            "role": "Worker"
+        },
+        {
+            "id": "102",
+            "fullName": "Jon Driver",
+            "email": "jon@driver.com",
+            "password": "jonthedriver",
+            "adress": "Street 3",
+            "number": "3",
+            "role": "Worker"
+        }
+    ]
+}

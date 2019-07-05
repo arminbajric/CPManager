@@ -1,0 +1,322 @@
+{
+    "list": [
+        {
+            "regPlates": "000-0-001",
+            "type": "Car",
+            "manufacturer": "Audi",
+            "model": "A4",
+            "color": "black",
+            "produced": "2010",
+            "seats": "5",
+            "load": 0,
+            "doors": "4+1",
+            "km": 221367,
+            "issues": false,
+            "motor": {
+                "fuel": "diesel",
+                "type": "TDI",
+                "volume": 1999,
+                "hp": 250,
+                "torque": 220
+            },
+            "legal": {
+                "registrationExp": "09/25/2019",
+                "insuranceExp": "09/25/2019"
+            },
+            "services": {
+                "nextFullService": 250000,
+                "nextOilAndFiltersChange": 225000,
+                "nextCleaning": "05/25/2019"
+            },
+          
+            "image": "../../../assets/vehicles/audi.jpg",
+            "available": true,
+            "daysReserved": 0
+        },
+        {
+            "regPlates": "000-0-002",
+            "type": "Car",
+            "manufacturer": "Audi",
+            "model": "A6",
+            "color": "black",
+            "produced": "2012",
+            "seats": "5",
+            "load": 0,
+            "doors": "4+1",
+            "km": 199341,
+            "issues": true,
+            "motor": {
+                "fuel": "gasoline",
+                "type": "TSI",
+                "volume": 2999,
+                "hp": 350,
+                "torque": 320
+            },
+            "legal": {
+                "registrationExp": "11/06/2019",
+                "insuranceExp": "11/06/2019"
+            },
+            "services": {
+                "nextFullService": 200000,
+                "nextOilAndFiltersChange": 190000,
+                "nextCleaning": "05/25/2019"
+            },
+           
+            "image": "../../../assets/vehicles/audi6.jpg",
+            "available": true,
+            "daysReserved": 0
+        },
+        {
+            "regPlates": "000-0-003",
+            "type": "Van",
+            "manufacturer": "VW",
+            "model": "Crafter",
+            "color": "white",
+            "produced": "2008",
+            "seats": "3",
+            "load": 0,
+            "doors": "4",
+            "km": 265367,
+            "issues": true,
+            "motor": {
+                "fuel": "diesel",
+                "type": "TDI",
+                "volume": 1999,
+                "hp": 180,
+                "torque": 220
+            },
+            "legal": {
+                "registrationExp": "05/06/2019",
+                "insuranceExp": "05/06/2019"
+            },
+            "services": {
+                "nextFullService": 300000,
+                "nextOilAndFiltersChange": 275000,
+                "nextCleaning": "05/24/2019"
+            },
+           
+            "image":"../../../assets/vehicles/crafter.jpg",
+            "available": false,
+            "daysReserved": 1
+        },
+        {
+            "regPlates": "000-0-004",
+            "type": "Van",
+            "manufacturer": "Ford",
+            "model": "Transit",
+            "color": "White",
+            "produced": "2009",
+            "load": 3,
+            "seats": "3",
+            "doors": "4+1",
+            "km": 221367,
+            "issues": true,
+            "motor": {
+                "fuel": "deisel",
+                "type": "TDI",
+                "volume": 1999,
+                "hp": 250,
+                "torque": 220
+            },
+            "legal": {
+                "registrationExp": "07/21/2019",
+                "insuranceExp": "07/21/2019"
+            },
+            "services": {
+                "nextFullService": 250000,
+                "nextOilAndFiltersChange": 225000,
+                "nextCleaning": "05/24/2019"
+            },
+            "image":"../../../assets/vehicles/transit.jpg",
+            "available": false,
+            "daysReserved": 1
+        },
+        {
+            "regPlates": "000-0-005",
+            "type": "Truck",
+            "manufacturer": "Volvo",
+            "color": "red",
+            "model": "Model 1",
+            "produced": "2010",
+            "seats": "3",
+            "doors": "2",
+            "load": 15,
+            "km": 221367,
+            "issues": true,
+            "motor": {
+                "fuel": "deisel",
+                "type": "Type 1",
+                "volume": 59999,
+                "hp": 450,
+                "torque": 420
+            },
+            "legal": {
+                "registrationExp": "05/25/2019",
+                "insuranceExp": "05/25/2019"
+            },
+            "services": {
+                "nextFullService": 250000,
+                "nextOilAndFiltersChange": 225000,
+                "nextCleaning": "05/25/2019"
+            },
+            "image":"../../../assets/vehicles/volvo.jpg",
+            "available": false,
+            "daysReserved": 1
+        },
+        {
+            "regPlates": "000-0-006",
+            "type": "Truck",
+            "manufacturer": "Scania",
+            "color": "black",
+            "produced": "2011",
+            "model":"Model 2",
+            "seats": "3",
+            "doors": "2",
+            "km": 221367,
+            "issues":false,
+            "motor": {
+                "fuel": "diesel",
+                "type": "Type 1",
+                "volume": 5999,
+                "hp": 450,
+                "torque": 420
+            },
+            "legal": {
+                "registrationExp": "10/10/2019",
+                "insuranceExp": "10/10/2019"
+            },
+            "services": {
+                "nextFullService": 250000,
+                "nextOilAndFiltersChange": 225000,
+                "nextCleaning": "05/26/2019"
+            },
+           "image":"../../../assets/vehicles/scania.jpg",
+            "available": true,
+            "daysReserved": 1
+        },
+        {
+            "regPlates": "000-0-007",
+            "type": "Bus",
+            "manufacturer": "Mercedes",
+            "model": "Model bus",
+            "color": "white",
+            "produced": "2011",
+            "seats": "55",
+            "doors": "4+1",
+            "km": 221367,
+            "issues": true,
+            "motor": {
+                "fuel": "diesel",
+                "type": "TDI",
+                "volume": 4999,
+                "hp": 250,
+                "torque": 220
+            },
+            "legal": {
+                "registrationExp": "11/04/2019",
+                "insuranceExp": "11/04/2019"
+            },
+            "services": {
+                "nextFullService": 250000,
+                "nextOilAndFiltersChange": 225000,
+                "nextCleaning": "05/25/2019"
+            },
+            "image":"../../../assets/vehicles/bus.jpg",
+            "available": false,
+            "daysReserved": 3
+        },
+        {
+            "regPlates": "000-0-008",
+            "type": "Mini van",
+            "manufacturer": "Volkswagen",
+            "model": "Caddy",
+            "color": "white",
+            "produced": "2008",
+            "seats": "8",
+            "doors": "3+1",
+            "km": 221367,
+            "issues": false,
+            "motor": {
+                "fuel": "diesel",
+                "type": "TDI",
+                "volume": 1999,
+                "hp": 250,
+                "torque": 220
+            },
+            "legal": {
+                "registrationExp": "05/28/2019",
+                "insuranceExp": "05/28/2019"
+            },
+            "services": {
+                "nextFullService": 250000,
+                "nextOilAndFiltersChange": 225000,
+                "nextCleaning": "05/26/2019"
+            },
+            "image":"../../../assets/vehicles/caddy.jpeg",
+            "available": false,
+            "daysReserved": 1
+        },
+        {
+            "regPlates": "000-0-009",
+            "type": "Heavy machinery",
+            "manufacturer": "Cat",
+            "model": "Model 1",
+            "color": "black",
+            "produced": "2010",
+            "seats": "1",
+            "doors": "2",
+            "workhours": 2256,
+            "issues": false,
+            "motor": {
+                "fuel": "deisel",
+                "type": "Type 1",
+                "volume": 5999,
+                "hp": 450,
+                "torque": 420
+            },
+            "legal": {
+                "registrationExp": "04/12/2020",
+                "insuranceExp": "04/12/2020"
+            },
+            "services": {
+                "nextFullService": 3000,
+                "nextOilAndFiltersChange": 2500,
+                "nextCleaning": "06/01/2019"
+            },
+            "image":"../../../assets/vehicles/cat.jpg",
+            "available": false,
+            "daysReserved": 3
+        },
+        {
+            "regPlates": "000-0-010",
+            "type": "Heavy machinery",
+            "manufacturer": "Cat",
+            "model": "Model 1",
+            "color": "orange",
+            "produced": "2012",
+            "seats": "1",
+            "doors": "2",
+            "workhours": 1986,
+            "issues": false,
+            "motor": {
+                "fuel": "deisel",
+                "type": "TDI",
+                "volume": 1999,
+                "hp": 250,
+                "torque": 220
+            },
+            "legal": {
+                "registrationExp": "02/21/2020",
+                "insuranceExp": "02/21/2020"
+            },
+            "services": {
+                "nextFullService": 2000,
+                "nextOilAndFiltersChange": 2500,
+                "nextCleaning": "05/27/2019"
+            },
+            "image":"../../../assets/vehicles/cat1.jpg",
+            "available": true,
+            "daysReserved": 0
+        }
+    ]
+}

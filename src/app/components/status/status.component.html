@@ -1,0 +1,177 @@
+<div class="container col col-lg-12">
+  <div class="row">
+    <div class="col col-lg-8">
+      <div class="container col col-lg-12">
+        <div class="row">
+          <h3>Garage statistic</h3>
+        </div>
+
+        <div class="row heading">
+          <div class="col col-lg-3 info">
+            <h4>Total/available</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>Trucks</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>Heavy mach.</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>Buses</h4>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles.getTotalNumberOfVehicles()}}/{{vehicles.getAvailableNumber()}}</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles.getTruckNumber()}}/{{vehicles.getAvailableTruckNumbers()}}</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles.getHeavyNumber()}}/{{vehicles.getAvailableHeavyNumbers()}}</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles.getBusNumber()}}/{{vehicles.getAvailableBusesNumbers()}}</h4>
+          </div>
+        </div>
+
+        <div class="row heading">
+          <div class="col col-lg-3 info">
+            <h4>Vans</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>Mini vans</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>Cars</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles. getVanNumber()}}/{{vehicles.getAvailableVansNumbers()}}</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles.getMiniVanNumber()}}/{{vehicles.getAvailableMiniVansNumbers()}}</h4>
+          </div>
+          <div class="col col-lg-3 info">
+            <h4>{{vehicles.getCarsNumber()}}/{{vehicles.getAvailableCarsNumbers()}}</h4>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col col-lg-12">
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Actions needed </h3>
+        </div>
+        <div class="row ">
+          <div class="col col-lg-6 ">
+            <div class="container ">
+              <div class="row">
+                <h5>Registration expiring</h5>
+              </div>
+              <div *ngFor="let list of registrationList">
+                <div class="row ablock card ">
+                  <div>{{list.manufacturer+'  '+list.model}}</div>
+                  <div>Registration expires{{' '+list.legal.registrationExp}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-6">
+
+            </div>
+          </div>
+
+          <div class="col col-lg-6 ">
+            <div class="container ">
+              <div class="row">
+                <h5>Insurance expiring</h5>
+              </div>
+              <div *ngFor="let list of insuranceList">
+                <div class="row card ablock">
+                  <div>{{list.manufacturer+'  '+list.model}}</div>
+                  <div>Insurance expires{{' '+list.legal.insuranceExp}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-6">
+
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col col-lg-6 ">
+            <div class="container ">
+              <div class="row">
+                <h5>Full service upcoming</h5>
+              </div>
+              <div *ngFor="let list of serviceList">
+                <div class="row ablock card ">
+                  <div>{{list.manufacturer+'  '+list.model}}</div>
+                  <div>Current kilometers :{{' '+list.km}}</div>
+                  <div>Full service at :{{' '+list.services.nextFullService}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-6">
+            <div class="container ">
+              <div class="row">
+                <h5>Upcoming oil and filters change</h5>
+              </div>
+              <div *ngFor="let list of oafServiceList">
+                <div class="row ablock card ">
+                  <div>{{list.manufacturer+'  '+list.model}}</div>
+                  <div>Current kilometers :{{' '+list.km}}</div>
+                  <div>Next OAF service at :{{' '+list.services.nextOilAndFiltersChange}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+            <div class="col col-lg-6">
+                <div class="container ">
+                  <div class="row">
+                    <h5>Upcoming cleaning</h5>
+                  </div>
+                  <div *ngFor="let list of cleaningList">
+                    <div class="row ablock card ">
+                      <div>{{list.manufacturer+'  '+list.model}}</div>
+                      <div>Next cleaning :{{' '+list.services.nextCleaning}}</div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="col col-lg-4 card  activity">
+    <h3>Unsolved reports</h3>
+    <div class="container">
+      <div *ngFor="let report of reports">
+        <div class="row card activity-tab">
+          <div class="container">
+            <div class="row">
+              {{report.manufacturer+'  '+report.model}}
+            </div>
+            <div class="row">
+              Problem : {{report.areaOfProblem}}
+            </div>
+            <div class="row">
+              Description: {{report.problemDescription}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,55 @@
+.container{
+    color:#929292;
+   margin-top: 20px;
+   
+    padding-top: 1%;
+}
+.info{
+    text-align: center;
+}
+hr{
+    background-color:  black
+}
+.mid{
+    background-color: #929292;
+}
+.row{
+    margin-top: 4px;
+}
+
+.activity{
+    height: 100vh;
+    background-color:transparent;
+    overflow: auto;
+    border:none;
+    border-left: 1px solid black;
+    
+}
+.activity-tab{
+    background-color: #303030;
+   height: 120px;
+  
+   overflow-y:auto;
+   text-overflow: clip;
+}
+.registration{
+    background-color: transparent;
+    color:#929292;
+}
+h3{
+    color:#1F7FBF;
+}
+.statistic{
+    margin-top:5px !important;
+}
+h5{
+    color:#1C6CA2;
+}
+.ablock{
+    max-height: 250px !important;
+    overflow-y: auto;
+    background-color: transparent;
+}
+.res{
+    padding-left: 15px;
+}

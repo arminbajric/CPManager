@@ -1,0 +1,118 @@
+<div class="container col-lg-12 resources">
+  <div class="row"><h4>Resources on stock</h4></div>
+  <div class="row">
+    <div class="col col-lg-3 "><img src="../../../assets/images/icons8-gas-station-filled-50.png" title="{{resourcesList[0].type}}" height="55px" width="55px">{{'  '+resourcesList[0].quantity+' liters'}} </div>
+    <div class="col col-lg-3 "><img src="../../../assets/images/icons8-gas-pump-filled-50.png" title="{{resourcesList[1].type}}" height="55px" width="55px">{{'  '+resourcesList[1].quantity+' liters'}} </div>
+    <div class="col col-lg-3 "><img src="../../../assets/images/icons8-engine-oil-filled-50.png" title="{{resourcesList[2].type}}" height="55px" width="55px">{{'  '+resourcesList[2].quantity+' liters'}} </div>
+    <div class="col col-lg-3 "><img src="../../../assets/images/icons8-water-50.png" title="{{resourcesList[3].type}}" height="55px" width="55px">{{'  '+resourcesList[3].quantity+' liters'}} </div>
+  </div>
+  <hr>
+</div>
+<div class="container col-lg-12 ">
+  <div class="row ">
+    <div class="col col-lg-8">
+      <div class="container card col meetings">
+        <div class="row">
+          <h4 class="col col-lg-10">Upcoming meeting</h4><button data-toggle="collapse" data-target="#newmeeting" onclick="resolveCollapse('newmeeting')" class="button col col-lg-2">New Meeting</button>
+        </div>
+        <div class="row">
+          <div class="col">Title :{{meetingsList[i].title}}</div>
+        </div>
+        <div class="row">
+          <div class="col">Description :{{meetingsList[i].description}}</div>
+        </div>
+        <div class="row">
+          <div class="col">Date :{{meetingsList[i].date}}</div>
+        </div>
+        <div class="row">
+          <div class="col">Office :{{meetingsList[i].office}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-4">
+      <div class="container card col meetings">
+        <div class="row"><h4>Other meetings</h4></div>
+        <div *ngFor="let list of meetingsList;let i=index">
+
+            <div class="row card"><button class="col col-lg-12 button " id="{{i}}" (click)="showMeeting(this)">Title :
+                {{list.title}}<br>Date : {{list.date}}<br>Office : {{list.office}}</button></div>
+  
+  
+  
+          </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class=" collapse container col-lg-10 offset-1" id="newmeeting">
+  <div class="row">
+    <h4>New meeting</h4>
+  </div>
+  <form (submit)="saveMeeting()" [formGroup]="meeting">
+    <div class=" form-group row">
+      <label class="col col-lg-2 offset-1">Meeting title :</label>
+      <input type="text" formControlName="title" class="col col-lg-6 form-control" placeholder="Title">
+    </div>
+    <div class=" form-group row">
+      <label class="col col-lg-2 offset-1">Description :</label>
+      <textarea type="text" formControlName="description" rows="10" class="col col-lg-6 form-control"
+        formControlName="title" placeholder="Description"></textarea>
+    </div>
+    <div class="form-group row">
+      <label class="col col-lg-2 offset-1">Date :</label>
+      <input type="date" formControlName="date" class="col col-lg-6 form-control" placeholder="Date">
+    </div>
+    <div class=" form-group row">
+      <label class="col col-lg-2 offset-1">Office :</label>
+      <input type="number" formControlName="office" class="col col-lg-6 form-control" formControlName="office"
+        placeholder="Office">
+    </div>
+    <div class="form-group row"><button type="submit" class=" form-control button col col-lg-2 offset-7">Save</button>
+    </div>
+  </form>
+  <hr>
+</div>
+<div class="container col-lg-12">
+  <div class="row">
+    <div class="col col-lg-8">
+      <div class="container card content">
+        <div class="row ">
+
+          <h4 class="col col-lg-9">Staff request</h4><button class="button col col-lg-3" (click)="resolveRequest()">Mark as resolved</button>
+
+        </div>
+        <div class="row  ">
+          Title : {{' '+ otherRequestList[index].title}}
+        </div>
+        <div class="row  ">
+          Submitted by : {{' '+ otherRequestList[index].fullName}}
+        </div>
+        <div class="row  ">
+          Deadline : {{' '+ otherRequestList[index].until}}
+        </div>
+        <div class="row  ">
+          Description : {{' '+ otherRequestList[index].description}}
+        </div>
+
+      </div>
+    </div>
+    <div class="col col-lg-4">
+      <div class="container card content">
+        <div class="row">
+          <h4>Unresolved staff requests list</h4>
+        </div>
+        <div *ngFor="let list of otherRequestList;let i=index">
+
+          <div class="row card"><button class="col col-lg-12 button " id="{{i}}" (click)="showRequest($event)">Title :
+              {{list.title}}<br>By : {{list.fullName}}<br>Deadline : {{list.until}}</button></div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

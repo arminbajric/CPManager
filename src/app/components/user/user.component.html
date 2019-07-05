@@ -1,0 +1,60 @@
+<div class="container col-lg-12">
+  <div class="row">
+    <div class="col col-lg-2">
+      <div class="container card left-menu">
+
+        <div class="row"><button class="button col col-lg-12" type="button"><img
+              src="../../../assets/images/icons8-invite-filled-50.png" height="25px" width="25px">New report</button>
+        </div>
+        <div class="row"><button class="button col col-lg-12" type="button"><img
+              src="../../../assets/images/icons8-task-filled-50.png" height="25px" width="25px">New request</button>
+        </div>
+        <div class="row">
+          <div class="container card  list">
+            <div class="row">
+              <h4>Available vehicles</h4>
+            </div>
+            <div class="row ">
+              <div class="container">
+                <div *ngFor="let avl of avlList">
+                  <div class="row">{{avl.type +' '+avl.manufacturer+' '+avl.model}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="container col-lg-10 list">
+              <div class="row"><h4>Upcoming meeting</h4></div>
+              <div class="row">Title :{{meeting.title}}</div>
+              <div class="row">Description :{{meeting.description}}</div>
+              <div class="row">Date : {{meeting.date}}</div>
+              <div class="row">Office :{{meeting.office}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-10">
+      <div class="container card reports ">
+        <div class="row "><h4>Pending reports</h4></div>
+        <ul >
+        <div *ngFor="let report of reportsList; let i=index">
+          <li class="col col-lg-4 card reports">
+            <div class="container">
+              <div class="row ">
+               <p> {{report.manufacturer+'  '+report.model}}</p><button id="{{i}}" type="button" class="button" (click)="reportSolved($event)"><img title="Report solved" class="solved" src="../../../assets/images/icons8-support-filled-50.png" height="25px" width="25px"></button>
+              </div>
+              <div class="row">
+                Problem :{{report.areaOfProblem}}
+              </div>
+              <div class="row">
+                  Details :{{report.problemDescription}}
+                </div>
+            </div>
+          </li>
+        </div>
+      </ul> 
+      </div>
+    </div>
+  </div>
+</div>
